@@ -1,6 +1,6 @@
-# Feature engineering (documented historical approach)
+# Feature Engineering
 
-The final project report and pipeline notes describe the following upstream workflow. This is a methodology summary, not a reconstruction of unavailable code.
+The feature engineering pipeline integrates historical transaction, listening, and membership data to construct user-level features for churn prediction and intervention analysis.
 
 ## Data scale
 

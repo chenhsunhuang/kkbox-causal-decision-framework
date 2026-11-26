@@ -2,7 +2,7 @@
 
 **Applied machine learning · Causal inference · Decision science · Experimental design**
 
-A five-student course project for Manufacturing Data Science at National Taiwan University, using the WSDM Cup 2018 KKBOX Churn Prediction Challenge dataset. This portfolio edition presents selected historical implementations and results, reorganized for readability.
+A five-student course project for Manufacturing Data Science at National Taiwan University, using the WSDM Cup 2018 KKBOX Churn Prediction Challenge dataset.
 
 ## Overview
 
@@ -36,7 +36,7 @@ This was a five-person team project. I led the design and evaluation of the subs
 | Private leaderboard log loss before / after base-rate adjustment | 0.13542 / 0.12611 |
 | Inferred discount / free treatment counts | 654 / 1,998 |
 
-The 0.12611 score is the result documented in the final report. The target base rate was selected using leaderboard feedback; it is **not** a fully independent test estimate. Historical scores have not been independently reproduced in this portfolio edition.
+The target base rate was selected using leaderboard feedback; the reported score is therefore not a fully independent test estimate.
 
 ## Workflow
 
@@ -81,7 +81,7 @@ The early two-stage T-Learner used payment-derived outcome features and estimate
 
 ![Historical maximum standardized mean differences](figures/covariate_balance.png)
 
-Out-of-fold Qini scores ranged from 0.0164 to 0.0608 across S-, T- and X-Learners under the observational evaluation design. No external benchmark is assumed. These scores, together with the data limitations, did not support direct deployment of an individualized policy.
+Out-of-fold Qini scores ranged from 0.0164 to 0.0608 across S-, T- and X-Learners under the observational evaluation design. These scores, together with the data limitations, did not support direct deployment of an individualized policy.
 
 ![Historical uplift evaluation](figures/uplift_qini.png)
 
@@ -89,11 +89,13 @@ Out-of-fold Qini scores ranged from 0.0164 to 0.0608 across S-, T- and X-Learner
 
 Use the churn model to select high-risk, recently active users for a proposed three-arm randomized experiment: no subsidy, discount, and free trial. Prespecify stratification, primary outcomes, sample size, and economic guardrails. The historical full-pipeline filter yielded approximately 167,423 candidate users, with 29.1% observed churn; these are retrospective, in-sample planning estimates, not proof of persuadability or prospective performance. The experiment was proposed, not conducted.
 
-## Repository scope and reproducibility
+## Repository Scope and Reproducibility
 
-The notebooks start from pre-engineered feature tables. Raw-data preprocessing scripts, processed datasets, and trained model files are not included. The original two-stage feature list is recovered from the saved notebook output. The portfolio notebooks have been statically checked but not rerun with the original data. Selected aggregate historical results are retained in text and figures; row-level predictions and user identifiers are not published.
+The notebooks use pre-engineered feature tables. Raw data, preprocessing scripts, and trained model artifacts are not included. Reported results and figures are based on the original project experiments and have not been independently reproduced. Row-level predictions and user identifiers are not published.
 
-See [data requirements](data/README.md), [feature engineering](docs/feature_engineering.md), and [methodology and limitations](docs/methodology.md). To run with the required original artifacts, install dependencies with `pip install -r requirements.txt` in an isolated environment, then open the notebooks from the repository root or the `notebooks/` directory. Run notebook 01 before notebook 04. Notebooks 02 and 03 use their own respective input schemas. Dependency versions are not pinned because the original environment was not supplied.
+See [data requirements](data/README.md), [feature engineering](docs/feature_engineering.md), and [methodology and interpretation](docs/methodology.md).
+
+To run the notebooks with the required data artifacts, install dependencies using `pip install -r requirements.txt` and open the notebooks from the repository root or the `notebooks/` directory. Run notebook 01 before notebook 04. Notebooks 02 and 03 require their respective input schemas.
 
 ## Acknowledgments
 
