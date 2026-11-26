@@ -1,0 +1,20 @@
+# Private data and local outputs
+/data/*
+!/data/README.md
+!/data/prototype_feature_columns.json
+/outputs/
+*.parquet
+*.csv
+*.pkl
+*.pickle
+*.joblib
+*.npy
+*.npz
+*.db
+*.duckdb
+.env
+.env.*
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
